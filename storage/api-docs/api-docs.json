@@ -1,0 +1,64 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Posts API",
+        "description": "Create, Read, Update, Delete Posts",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/posts": {
+            "get": {
+                "summary": "Get all posts",
+                "description": "Display a listing of the resource.",
+                "operationId": "d852dbfabce2a65704c28f73a30ce29c",
+                "responses": {
+                    "200": {
+                        "description": "Everything OK"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Create a new post",
+                "description": "Store a newly created resource in storage.",
+                "operationId": "f563440421cf40130247d7a5ef991389",
+                "responses": {
+                    "200": {
+                        "description": "Everything OK"
+                    }
+                }
+            }
+        },
+        "/api/posts/:id": {
+            "get": {
+                "summary": "Get specific post",
+                "description": "Display the specified resource.",
+                "operationId": "1e9f9d89d49aaece6afee82faa8cec4c",
+                "responses": {
+                    "200": {
+                        "description": "Everything OK"
+                    }
+                }
+            },
+            "put": {
+                "summary": "Update specific post",
+                "description": "Update the specified resource in storage.",
+                "operationId": "a287d75b3b8c2b80b15335f930f52858",
+                "responses": {
+                    "200": {
+                        "description": "Everything OK"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete specific post",
+                "description": "Remove the specified resource from storage.",
+                "operationId": "1da6e7c3709c7c00241404958b74e3f0",
+                "responses": {
+                    "200": {
+                        "description": "Everything OK"
+                    }
+                }
+            }
+        }
+    }
+}
