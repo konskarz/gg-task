@@ -1,11 +1,65 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "Posts API",
-        "description": "Create, Read, Update, Delete Posts",
+        "title": "gg-task API",
+        "description": "Create, Read, Update, Delete Posts and Passengers",
         "version": "1.0.0"
     },
     "paths": {
+        "/api/passenger": {
+            "get": {
+                "summary": "Get all passengers",
+                "description": "Display a listing of the resource.",
+                "operationId": "7174e0396c98a9b4054ca1ff90a315a7",
+                "responses": {
+                    "200": {
+                        "description": "Everything OK"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Create a new passenger",
+                "description": "Store a newly created resource in storage.",
+                "operationId": "c3de8e600906e2de6451ccf0d3ad39c0",
+                "responses": {
+                    "200": {
+                        "description": "Everything OK"
+                    }
+                }
+            }
+        },
+        "/api/passenger/:id": {
+            "get": {
+                "summary": "Get specific passenger",
+                "description": "Display the specified resource.",
+                "operationId": "f777a72b83cbf91e47c19e062789bb62",
+                "responses": {
+                    "200": {
+                        "description": "Everything OK"
+                    }
+                }
+            },
+            "put": {
+                "summary": "Update specific passenger",
+                "description": "Update the specified resource in storage.",
+                "operationId": "2b714e81e466f3917f837acc538a75ca",
+                "responses": {
+                    "200": {
+                        "description": "Everything OK"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete specific passenger",
+                "description": "Remove the specified resource from storage.",
+                "operationId": "ad52228d36724d5d51ea9c54a091882f",
+                "responses": {
+                    "200": {
+                        "description": "Everything OK"
+                    }
+                }
+            }
+        },
         "/api/posts": {
             "get": {
                 "summary": "Get all posts",

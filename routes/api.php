@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AirlinesController;
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\PassengerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,5 +20,8 @@ use App\Http\Controllers\PostsController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::apiResource('airlines', AirlinesController::class);
-Route::apiResource('posts', PostsController::class);
+Route::apiResources([
+    'airlines' => AirlinesController::class,
+    'posts' => PostController::class,
+    'passenger' => PassengerController::class,
+]);

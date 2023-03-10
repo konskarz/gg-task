@@ -5,29 +5,21 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
-/**
- * @OA\Info(
- *     description="Create, Read, Update, Delete Posts and Passengers",
- *     version="1.0.0",
- *     title="gg-task API"
- * )
- */
-
-class PostsController extends Controller
+class PassengerController extends Controller
 {
     private $http;
 
     public function __construct()
     {
         $this->http = Http::withOptions([
-            'base_uri' => 'https://jsonplaceholder.typicode.com/'
+            'base_uri' => 'https://api.instantwebtools.net/v1/'
         ]);
     }
 
     /**
          * @OA\Get(
-         *     path="/api/posts",
-         *     summary="Get all posts",
+         *     path="/api/passenger",
+         *     summary="Get all passengers",
          *     description="Display a listing of the resource.",
          *     @OA\Response(
          *         response=200,
@@ -35,15 +27,15 @@ class PostsController extends Controller
          *     ),
          * )
     */
-    public function index()
+    public function index(Request $request)
     {
-        return $this->http->get('posts')->json();
+        return $this->http->get('passenger?' . $request->getQueryString())->json();
     }
 
     /**
          * @OA\Post(
-         *     path="/api/posts",
-         *     summary="Create a new post",
+         *     path="/api/passenger",
+         *     summary="Create a new passenger",
          *     description="Store a newly created resource in storage.",
          *     @OA\Response(
          *         response=200,
@@ -53,13 +45,13 @@ class PostsController extends Controller
     */
     public function store(Request $request)
     {
-        return $this->http->post('posts', $request->json())->json();
+        return $this->http->post('passenger', $request->json())->json();
     }
 
     /**
          * @OA\Get(
-         *     path="/api/posts/:id",
-         *     summary="Get specific post",
+         *     path="/api/passenger/:id",
+         *     summary="Get specific passenger",
          *     description="Display the specified resource.",
          *     @OA\Response(
          *         response=200,
@@ -69,13 +61,13 @@ class PostsController extends Controller
     */
     public function show(string $id)
     {
-        return $this->http->get("posts/{$id}")->json();
+        return $this->http->get("passenger/{$id}")->json();
     }
 
     /**
          * @OA\Put(
-         *     path="/api/posts/:id",
-         *     summary="Update specific post",
+         *     path="/api/passenger/:id",
+         *     summary="Update specific passenger",
          *     description="Update the specified resource in storage.",
          *     @OA\Response(
          *         response=200,
@@ -85,13 +77,13 @@ class PostsController extends Controller
     */
     public function update(Request $request, string $id)
     {
-        return $this->http->put("posts/{$id}", $request->json())->json();
+        return $this->http->put("passenger/{$id}", $request->json())->json();
     }
 
     /**
          * @OA\Delete(
-         *     path="/api/posts/:id",
-         *     summary="Delete specific post",
+         *     path="/api/passenger/:id",
+         *     summary="Delete specific passenger",
          *     description="Remove the specified resource from storage.",
          *     @OA\Response(
          *         response=200,
@@ -101,11 +93,6 @@ class PostsController extends Controller
     */
     public function destroy(string $id)
     {
-        return $this->http->delete("posts/{$id}")->json();
-    }
-
-    public function view() {
-        $posts = $this->index();
-        return view('posts', compact('posts'));
+        return $this->http->delete("passenger/{$id}")->json();
     }
 }
