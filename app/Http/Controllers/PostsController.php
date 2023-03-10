@@ -103,4 +103,9 @@ class PostsController extends Controller
     {
         return $this->http->delete("posts/{$id}")->json();
     }
+
+    public function view() {
+        $posts = $this->index();
+        return view('posts', compact('posts'));
+    }
 }
