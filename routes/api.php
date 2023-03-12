@@ -22,6 +22,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::apiResources([
     'airlines' => AirlinesController::class,
-    'posts' => PostController::class,
+    'posts' => PostsController::class,
     'passenger' => PassengerController::class,
 ]);
