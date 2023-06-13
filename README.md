@@ -1,4 +1,4 @@
-# gg-task
+# Grand Garage Task
 
 ## Aufgabenstellung
 
